@@ -1,0 +1,297 @@
+@import "tailwindcss";
+
+/* Adventure Mode Theme - Retro-futuristic Design */
+@theme {
+  /* Background Colors */
+  --color-void: #0a0a0f;
+  --color-deep-purple: #1a1a2e;
+  --color-surface: #16162a;
+  --color-surface-elevated: #1e1e38;
+
+  /* Neon Accent Colors */
+  --color-neon-pink: #ff1493;
+  --color-neon-blue: #00d4ff;
+  --color-neon-purple: #8b5cf6;
+  --color-neon-green: #00ff88;
+  --color-neon-gold: #ffd700;
+
+  /* Mood Colors */
+  --color-mood-work: #00d4ff;
+  --color-mood-date: #ff1493;
+  --color-mood-quick-bite: #ffd700;
+  --color-mood-budget: #00ff88;
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0b0;
+  --color-text-muted: #6b6b7b;
+
+  /* Font Families */
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+
+  /* Shadows & Effects */
+  --shadow-neon-pink: 0 0 20px rgba(255, 20, 147, 0.5);
+  --shadow-neon-blue: 0 0 20px rgba(0, 212, 255, 0.5);
+  --shadow-neon-purple: 0 0 20px rgba(139, 92, 246, 0.5);
+  --shadow-neon-green: 0 0 20px rgba(0, 255, 136, 0.5);
+  --shadow-neon-gold: 0 0 20px rgba(255, 215, 0, 0.5);
+
+  /* Animations */
+  --animate-pulse-neon: pulse-neon 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-grid-flow: grid-flow 20s linear infinite;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-void);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-deep-purple);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-pink);
+}
+
+/* Animation Keyframes */
+@keyframes pulse-neon {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px currentColor;
+  }
+  to {
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+@keyframes grid-flow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Glass Morphism Utility */
+.glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-elevated {
+  background: rgba(30, 30, 56, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Neon Text Utilities */
+.neon-text-pink {
+  color: var(--color-neon-pink);
+  text-shadow: 0 0 10px var(--color-neon-pink), 0 0 20px var(--color-neon-pink);
+}
+
+.neon-text-blue {
+  color: var(--color-neon-blue);
+  text-shadow: 0 0 10px var(--color-neon-blue), 0 0 20px var(--color-neon-blue);
+}
+
+.neon-text-purple {
+  color: var(--color-neon-purple);
+  text-shadow: 0 0 10px var(--color-neon-purple), 0 0 20px var(--color-neon-purple);
+}
+
+.neon-text-green {
+  color: var(--color-neon-green);
+  text-shadow: 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green);
+}
+
+.neon-text-gold {
+  color: var(--color-neon-gold);
+  text-shadow: 0 0 10px var(--color-neon-gold), 0 0 20px var(--color-neon-gold);
+}
+
+/* Neon Border Utilities */
+.neon-border-pink {
+  border-color: var(--color-neon-pink);
+  box-shadow: 0 0 10px rgba(255, 20, 147, 0.3), inset 0 0 10px rgba(255, 20, 147, 0.1);
+}
+
+.neon-border-blue {
+  border-color: var(--color-neon-blue);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3), inset 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+.neon-border-purple {
+  border-color: var(--color-neon-purple);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3), inset 0 0 10px rgba(139, 92, 246, 0.1);
+}
+
+.neon-border-green {
+  border-color: var(--color-neon-green);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3), inset 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+.neon-border-gold {
+  border-color: var(--color-neon-gold);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3), inset 0 0 10px rgba(255, 215, 0, 0.1);
+}
+
+/* Animation Utilities */
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Staggered Animation Delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Grid Background Pattern */
+.grid-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-flow 20s linear infinite;
+  pointer-events: none;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-neon-purple);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-neon-purple);
+  color: white;
+}
