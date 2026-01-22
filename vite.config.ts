@@ -48,7 +48,7 @@ function apiDevPlugin(): Plugin {
             const response = await fetch(
               `https://maps.googleapis.com/maps/api/place/nearbysearch/json?${params}`
             );
-            const data = await response.json();
+            const data = (await response.json()) as { results?: any[] };
 
             const places = (data.results || []).map((place: any) => ({
               placeId: place.place_id,
@@ -92,7 +92,7 @@ function apiDevPlugin(): Plugin {
             const response = await fetch(
               `https://maps.googleapis.com/maps/api/geocode/json?${params}`
             );
-            const data = await response.json();
+            const data = (await response.json()) as { results?: any[] };
 
             let address = data.results?.[0]?.formatted_address || '';
 
@@ -165,7 +165,7 @@ function apiDevPlugin(): Plugin {
             const response = await fetch(
               `https://maps.googleapis.com/maps/api/place/details/json?${params}`
             );
-            const data = await response.json();
+            const data = (await response.json()) as { result: any };
             const place = data.result;
 
             const placeDetails = {
